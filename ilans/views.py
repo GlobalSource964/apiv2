@@ -11,7 +11,7 @@ class IlanList(generics.ListCreateAPIView):
     permission_classes = [ApiKeyPermission]
 
     def get_queryset(self):
-        domain = self.request.META['HTTP_HOST']
+        domain = self.request.GET.get('domain', None)
         print(domain)
         api_key = self.request.META.get('HTTP_AUTHORIZATION', '').split(' ')[-1]
         if api_key == settings.API_KEY or domain == '25.46.34.4':  # API key doğru veya IP adresi belirli bir değerse
