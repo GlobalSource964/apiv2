@@ -50,6 +50,9 @@ CORS_ALLOW_ALL_ORIGINS = False  # Bu, sadece belirli originlerin izinli olacaÄŸÄ
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
 
 
 CORS_ALLOWED_ORIGINS = [
