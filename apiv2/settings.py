@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-$bf532(m^!s_o#3=slu2)4zq4q@+nn7eui%%&&o8tlp53=qwm(
 API_KEY = 'nn7eui%%&&o8tlp53=qwm'  # Buraya kendi API anahtarınızı ekleyin
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -32,8 +32,6 @@ INSTALLED_APPS = [
     'apiv2',
     'corsheaders',
 ]
-
-
 
 
 MIDDLEWARE = [
@@ -114,8 +112,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_URL = '/staticfiles/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 
 # Default primary key field type
