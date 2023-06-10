@@ -55,6 +55,7 @@ CSRF_COOKIE_DOMAIN = 'apiv2.ayasescorts.online'
 CORS_ALLOWED_ORIGINS = [
     "https://apiv2.ayasescorts.online",
     "http://apiv2.ayasescorts.online",
+    "http://185.217.136.77:8000"
     # Diğer güvendiğiniz siteleri buraya ekleyebilirsinizs.
 ]
 
