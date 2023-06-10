@@ -31,7 +31,7 @@ admin.site.register(Ilan, IlanAdmin)
 class ResimAdmin(admin.ModelAdmin):
     list_display = ['id', 'ilan', 'resim_url', 'aktif']
     list_filter = ['aktif', 'ilan']
-    search_fields = ['ilan']
+    search_fields = ['ilan__telefon']
 
 
 admin.site.register(Resim, ResimAdmin)
