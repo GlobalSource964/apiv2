@@ -49,6 +49,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://apiv2.ayasescorts.online",
+    "http://apiv2.ayasescorts.online",
     # Diğer güvendiğiniz siteleri buraya ekleyebilirsiniz.
 ]
 
