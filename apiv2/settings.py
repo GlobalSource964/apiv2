@@ -46,21 +46,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware'
 ]
-CORS_ALLOW_ALL_ORIGINS = False  # Bu, sadece belirli originlerin izinli olacağını belirtir.
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
-
-
-CORS_ALLOWED_ORIGINS = [
-    "https://apiv2.ayasescorts.online",
-    "http://apiv2.ayasescorts.online",
-    "http://185.217.136.77:8000"
-    # Diğer güvendiğiniz siteleri buraya ekleyebilirsinizs.
-]
 
 ROOT_URLCONF = 'apiv2.urls'
 
