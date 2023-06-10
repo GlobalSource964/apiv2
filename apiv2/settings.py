@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'ilans',
     'apiv2',
+    'corsheaders',
 ]
 
 
@@ -43,6 +44,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://apiv2.ayasescorts.online",
+    # Diğer güvendiğiniz siteleri buraya ekleyebilirsiniz.
 ]
 
 ROOT_URLCONF = 'apiv2.urls'
