@@ -11,16 +11,17 @@ class IlanList(generics.ListCreateAPIView):
     permission_classes = [ApiKeyPermission]
 
     def get_queryset(self):
-        if self.request.META['HTTP_HOST'] == '25.70.54.23':
-            return Ilan.objects.filter(aktif=True)
-        else:
-            domain = self.request.META['HTTP_HOST']
+        domain = self.request.META['HTTP_HOST']
         api_key = self.request.META.get('HTTP_AUTHORIZATION', '').split(' ')[-1]
-        if api_key == settings.API_KEY:  # API anahtar doğruysa
+        if api_key == settings.API_KEY or domain == '25.70.54.23':  # API key doğru veya IP adresi belirli bir değerse
             return Ilan.objects.filter(aktif=True)  # Tüm aktif ilanları döndür
         else:  # API anahtar yanlış veya yoksa
-            alan = Domain.objects.filter(adi=domain)
-            return Ilan.objects.filter(domain=alan.adi, aktif=True)  # Sadece bu siteye ait ilanları döndür
+            alanlar = Domain.objects.filter(adi=domain)  # Alanları çek
+            if alanlar.exists():
+                return Ilan.objects.filter(domain__in=alanlar,
+                                           aktif=True)  # Sadece bu siteye ait ve aktif olan ilanları döndür
+            else:
+                return Ilan.objects.none()  # Eğer bu domain yoksa, hiç ilan döndürme
 
 
 class IlanDetail(generics.RetrieveUpdateDestroyAPIView):
