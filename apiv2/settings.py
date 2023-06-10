@@ -47,7 +47,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 CORS_ALLOW_ALL_ORIGINS = False  # Bu, sadece belirli originlerin izinli olacağını belirtir.
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_DOMAIN = 'apiv2.ayasescorts.online'
+
 
 CORS_ALLOWED_ORIGINS = [
     "https://apiv2.ayasescorts.online",
