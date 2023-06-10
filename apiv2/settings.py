@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware'
 ]
+CORS_ALLOW_ALL_ORIGINS = False  # Bu, sadece belirli originlerin izinli olacağını belirtir.
 
 CORS_ALLOWED_ORIGINS = [
     "https://apiv2.ayasescorts.online",
