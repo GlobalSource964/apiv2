@@ -51,7 +51,7 @@ CORS_ALLOW_ALL_ORIGINS = True  # Bu, sadece belirli originlerin izinli olacağı
 CORS_ALLOWED_ORIGINS = [
     "https://apiv2.ayasescorts.online",
     "http://apiv2.ayasescorts.online",
-    # Diğer güvendiğiniz siteleri buraya ekleyebilirsiniz.
+    # Diğer güvendiğiniz siteleri buraya ekleyebilirsinizs.
 ]
 
 ROOT_URLCONF = 'apiv2.urls'
