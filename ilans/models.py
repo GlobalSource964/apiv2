@@ -22,7 +22,7 @@ class Domain(models.Model):
 class Ilan(models.Model):
     domain = models.ManyToManyField(Domain)
     paket = models.ManyToManyField(Paketler)
-    telefon = models.CharField(max_length=15)
+    telefon = models.CharField(max_length=15, unique=True)  # added unique=True here
     baslangic_tarihi = models.DateField()
     bitis_tarihi = models.DateField(blank=True, null=True)
     meta_title = models.CharField(max_length=255, blank=True)
@@ -40,7 +40,7 @@ class Ilan(models.Model):
 
 class Resim(models.Model):
     ilan = models.ForeignKey(Ilan, related_name='resimler', on_delete=models.CASCADE)
-    resim_url = models.URLField()
+    resim_url = models.URLField(unique=True)  # added unique=True here
     aktif = models.BooleanField(default=False)
 
     def __str__(self):
