@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware'
 ]
-CORS_ALLOW_ALL_ORIGINS = True  # Bu, sadece belirli originlerin izinli olacağını belirtir.
+CORS_ALLOW_ALL_ORIGINS = False  # Bu, sadece belirli originlerin izinli olacağını belirtir.
 CSRF_COOKIE_SECURE = True
 
 CORS_ALLOWED_ORIGINS = [
