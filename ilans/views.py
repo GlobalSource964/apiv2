@@ -1,9 +1,9 @@
 from rest_framework import generics
 
 from apiv2 import settings
-from .models import Ilan, Domain, Resim, Transaction
+from .models import Ilan, Domain, Resim, Transaction, Blog
 from .permissions import ApiKeyPermission
-from .serializers import IlanSerializer, DomainSerializer, ResimSerializer, TransactionSerializer
+from .serializers import IlanSerializer, DomainSerializer, ResimSerializer, TransactionSerializer, BlogSerializer
 
 
 class IlanList(generics.ListCreateAPIView):
@@ -42,6 +42,14 @@ class DomainDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DomainSerializer
     permission_classes = [ApiKeyPermission]
 
+
+class BlogListCreate(generics.ListCreateAPIView):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
+
+class BlogRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
 
 class ResimList(generics.ListCreateAPIView):
     queryset = Resim.objects.all()

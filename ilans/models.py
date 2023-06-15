@@ -35,7 +35,17 @@ class Ilan(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.telefon
+        return f"{self.id} - {self.telefon}"
+
+
+class Blog(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    domain = models.ForeignKey(Domain, on_delete=models.CASCADE, related_name='blogs')
+    ilan = models.ForeignKey(Ilan, on_delete=models.CASCADE, related_name='blogs')
+
+    def __str__(self):
+        return self.title
 
 
 class Resim(models.Model):

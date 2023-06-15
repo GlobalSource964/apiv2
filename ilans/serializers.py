@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Ilan, Resim, Transaction, Domain, Paketler
+from .models import Ilan, Resim, Transaction, Domain, Paketler, Blog
 
 
 class PaketSerializer(serializers.ModelSerializer):
@@ -8,10 +8,17 @@ class PaketSerializer(serializers.ModelSerializer):
         fields = ['adi','pozisyon']
 
 
+class BlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Blog
+        fields = ['title', 'content', 'domain', 'ilan']
+
+
 class DomainSerializer(serializers.ModelSerializer):
+    blogs = BlogSerializer(many=True, read_only=True)
     class Meta:
         model = Domain
-        fields = ['adi']
+        fields = ['adi', 'meta_title', 'meta_description', 'blogs']
 
 
 class ResimSerializer(serializers.ModelSerializer):

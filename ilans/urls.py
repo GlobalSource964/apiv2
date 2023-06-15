@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import IlanList, IlanDetail, DomainList, DomainDetail, ResimList, ResimDetail, TransactionList, TransactionDetail
+from .views import IlanList, IlanDetail, DomainList, DomainDetail, ResimList, ResimDetail, TransactionList, \
+    TransactionDetail, BlogListCreate, BlogRetrieveUpdateDestroy
 
 urlpatterns = [
     path('ilanlar', IlanList.as_view(), name='ilan-list'),
@@ -10,4 +11,7 @@ urlpatterns = [
     path('resim/<int:pk>', ResimDetail.as_view(), name='resim-detail'),
     path('transaction', TransactionList.as_view(), name='transaction-list'),
     path('transaction/<int:pk>', TransactionDetail.as_view(), name='transaction-detail'),
+
+    path('blogs/', BlogListCreate.as_view(), name='blog-list-create'),
+    path('blogs/<int:pk>/', BlogRetrieveUpdateDestroy.as_view(), name='blog-detail'),
 ]
