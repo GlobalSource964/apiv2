@@ -14,7 +14,7 @@ class IlanList(generics.ListCreateAPIView):
         domain = self.request.GET.get('domain', None)
         print(domain)
         api_key = self.request.META.get('HTTP_AUTHORIZATION', '').split(' ')[-1]
-        if api_key == settings.API_KEY or domain == '25.46.34.4':  # API key doğru veya IP adresi belirli bir değerse
+        if api_key == settings.API_KEY or domain == '172.29.153.241':  # API key doğru dveya IP adresi belirli bir değerse
             return Ilan.objects.filter(aktif=True)  # Tüm aktif ilanları döndür
         else:  # API anahtar yanlış veya yoksa
             alanlar = Domain.objects.filter(adi=domain)  # Alanları çek
