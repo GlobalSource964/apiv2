@@ -2,9 +2,6 @@ from django.contrib import admin
 from .models import Ilan, Resim, Transaction, Domain, Paketler, Blog
 # Ilan modelini admin paneline ekleyin
 
-
-
-
 class BlogAdmin(admin.ModelAdmin):
     pass
 
