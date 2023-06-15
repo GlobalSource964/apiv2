@@ -1,13 +1,11 @@
 from django.contrib import admin
 from .models import Ilan, Resim, Transaction, Domain, Paketler, Blog
-from dynamic_raw_id.admin import DynamicRawIDMixin
-
 # Ilan modelini admin paneline ekleyin
 
 
 
 
-class BlogAdmin(DynamicRawIDMixin, admin.ModelAdmin):
+class BlogAdmin(admin.ModelAdmin):
     pass
 
 class DomainAdmin(admin.ModelAdmin):

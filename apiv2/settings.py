@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'ilans',
     'apiv2',
     'corsheaders',
-    'dynamic_raw_id',
 ]
 
 
