@@ -19,8 +19,7 @@ class IlanList(generics.ListCreateAPIView):
         else:  # API anahtar yanlış veya yoksa
             alanlar = Domain.objects.filter(adi=domain)  # Alanları çek
             if alanlar.exists():
-                return Ilan.objects.filter(domain__in=alanlar,
-                                           aktif=True)  # Sadece bu siteye ait ve aktif olan ilanları döndür
+                return Ilan.objects.filter(domain__in=alanlar, aktif=True)  # Sadece bu siteye ait ve aktif olan ilanları döndür
             else:
                 return Ilan.objects.none()  # Eğer bu domain yoksa, hiç ilan döndürme
 
