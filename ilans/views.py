@@ -23,7 +23,6 @@ class IlanList(generics.ListCreateAPIView):
             else:
                 return Ilan.objects.none()  # Eğer bu domain yoksa, hiç ilan döndürme
 
-
 class IlanDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ilan.objects.all()
     serializer_class = IlanSerializer

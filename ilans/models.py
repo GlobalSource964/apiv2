@@ -43,6 +43,9 @@ class Blog(models.Model):
     content = models.TextField()
     domain = models.ForeignKey(Domain, on_delete=models.CASCADE, related_name='blogs')
     ilan = models.ForeignKey(Ilan, on_delete=models.CASCADE, related_name='blogs')
+    olusturma_tarihi = models.DateField(blank=True, null=True)
+    views = models.PositiveIntegerField(default=0)
+    yazar = models.CharField(max_length=150)
 
     def __str__(self):
         return self.title
