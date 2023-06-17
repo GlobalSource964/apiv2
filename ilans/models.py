@@ -45,7 +45,7 @@ class Blog(models.Model):
     ilan = models.ForeignKey(Ilan, on_delete=models.CASCADE, related_name='blogs')
     olusturma_tarihi = models.DateField(auto_now_add=True)  # This line has been updated
     views = models.PositiveIntegerField(default=0)
-    yazar = models.CharField(max_length=150)
+    yazar = models.CharField(max_length=150, default=1)
 
     def __str__(self):
         return self.title
