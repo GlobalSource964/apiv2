@@ -21,6 +21,13 @@ class DomainSerializer(serializers.ModelSerializer):
         fields = ['adi', 'meta_title', 'meta_description', 'blogs']
 
 
+class DomainSerializerBacklink(serializers.ModelSerializer):
+    blogs = BlogSerializer(many=True, read_only=True)
+    class Meta:
+        model = Domain
+        fields = ['adi', 'meta_title', 'meta_description']
+
+
 class ResimSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resim

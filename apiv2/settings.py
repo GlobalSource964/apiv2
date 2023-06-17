@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-$bf532(m^!s_o#3=slu2)4zq4q@+nn7eui%%&&o8tlp53=qwm(
 API_KEY = 'nn7eui%%&&o8tlp53=qwm'  # Buraya kendi API anahtarınızı ekleyin
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
