@@ -11,7 +11,7 @@ class PaketSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['title', 'content', 'domain', 'ilan']
+        fields = ['title', 'content', 'domain', 'ilan', 'olusturma_tarihi', 'views', 'yazar']
 
 
 class DomainSerializer(serializers.ModelSerializer):
