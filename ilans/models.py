@@ -1,6 +1,6 @@
 from datetime import timedelta
 from django.db import models
-
+import random
 
 class Paketler(models.Model):
     adi = models.CharField(max_length=255)
@@ -43,12 +43,18 @@ class Blog(models.Model):
     content = models.TextField()
     domain = models.ForeignKey(Domain, on_delete=models.CASCADE, related_name='blogs')
     ilan = models.ForeignKey(Ilan, on_delete=models.CASCADE, related_name='blogs')
-    olusturma_tarihi = models.DateField(blank=True, null=True)
+    olusturma_tarihi = models.DateField(auto_now_add=True)  # This line has been updated
     views = models.PositiveIntegerField(default=0)
     yazar = models.CharField(max_length=150)
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.pk:  # Check if the blog is being created
+            self.views = 139  # Initial views count
+            self.views *= random.randint(19, 89)  # Multiply by a random number
+        super().save(*args, **kwargs)  # Call the "real" save() method
 
 
 class Resim(models.Model):
